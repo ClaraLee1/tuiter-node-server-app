@@ -5,12 +5,12 @@ import HelloController from "./controllers/hello-controller.js";
 import UserController from "./controllers/users/users-controller.js";
 import TuitsController from "./controllers/tuits/tuits-controller.js";
 
+mongoose.connect('mongodb+srv://claralee:superpassword@cluster0.pfbguur.mongodb.net/tuiter?retryWrites=true&w=majority')
 const app = express();
 app.use(cors());
 app.use(express.json());
 // const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/tuiter';
 // mongoose.connect(CONNECTION_STRING);
-mongoose.connect('mongodb+srv://claralee:superpassword@cluster0.pfbguur.mongodb.net/?retryWrites=true&w=majority')
 TuitsController(app);
 HelloController(app);
 UserController(app);
